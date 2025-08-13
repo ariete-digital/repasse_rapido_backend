@@ -1,0 +1,20 @@
+{
+    "nome": "subregiao um",
+    "percentual_comissao": 3.0,
+    "id_escritorio_regional": 1,
+    "ufs": [
+        11,
+        12,
+        13
+    ],
+    "faixas_cep": [
+        {
+            "cep_inicial": 30000000,
+            "cep_final": 30600000
+        },
+        {
+            "cep_inicial": 30800000,
+            "cep_final": 30900000
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "method": "post",
+    "obrigatorios": [],
+    "payload": {
+        "id_anuncio": 1,
+        "moderacao_aprovada": true,
+        "obs_moderacao": "Lorem ipsum bla bla bla bla bla"
+    }
+}

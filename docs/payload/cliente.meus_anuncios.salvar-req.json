@@ -1,0 +1,66 @@
+{
+    "method": "post",
+    "obrigatorios": [],
+    "payload": {
+        "id_anuncio_rascunho": null,
+        "renavam": "2945VGW2489GYB2U4",
+        "tipo_veiculo": "C",
+        "tipo_venda": "C",
+        "id_cidade": 1,
+        "status_veiculo": "N",
+        "id_marca": 2,
+        "id_modelo": 1,
+        "versao_veiculo": "1.0 8v Turbo",
+        "ano_fabricacao": 2012,
+        "ano_modelo": 2013,
+        "quilometragem": 45679,
+        "placa": "HTV3R43",
+        "id_tipo_cambio": 1,
+        "id_tipo_combustivel": 1,
+        "num_portas": 1,
+        "id_cor": 1,
+
+        "opcionais": [1, 2, 3, 4],
+
+        "unico_dono": false,
+        "aceita_troca": false,
+        "ipva_pago": true,
+        "veiculo_nome_anunciante": true,
+        "financiado": true,
+        "parcelas_em_dia": true,
+        "todas_revisoes_concessionaria": true,
+        "passou_leilao": true,
+        "possui_manual": true,
+        "possui_chave_reserva": true,
+        "possui_ar": true,
+        "ar_funcionando": true,
+        "escapamento_solta_fumaca": true,
+        "garantia_fabrica": true,
+        "motor_bate": true,
+        "cambio_faz_barulho": true,
+        "cambio_escapa_marcha": true,
+        "luz_injecao_airbag": true,
+        "pequena_monta": true,
+        "media_monta": true,
+        "grande_monta": true,
+        "furtado_roubado": true,
+        "id_tipo_pneu": 1,
+        "id_tipo_parabrisa": 1,
+
+        "imagens": {
+            "principal": "File",
+            "galeria": [
+                "File1",
+                "File2",
+                "File3",
+                "File4"
+            ]
+        },
+
+        "descricao": "Veiculo em otimo estado, usado somente na cidade para pequenas viagens",
+        "valor": 79000.00,
+        "aceite_termos": true,
+
+        "id_plano": 1
+    }
+}

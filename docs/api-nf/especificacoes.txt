@@ -1,0 +1,17 @@
+Host: https://api.queroauto.com.br
+
+Autenticação: Basic Auth (solicitar usuario e senha)
+
+Endpoints:
+  -Listagem de clientes que compraram planos: /api/v1/clientes
+  -Listagem de pedidos: /api/v1/pedidos
+  -Listagem de comissoes: /api/v1/comissoes
+
+Parâmetros:
+  Query:
+    data_inicial (formato YYYY-MM-DD ou YYYY-MM-DD-HH-MM)
+    data_final (formato YYYY-MM-DD ou YYYY-MM-DD-HH-MM)
+
+OBS.: 
+  -Para o cliente/usuario, o e-mail é chave única
+  -Os parâmetros são os mesmos para todos os endpoints

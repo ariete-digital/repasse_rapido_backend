@@ -1,0 +1,53 @@
+Casos de uso:
+
+Controle de acesso:
+    - Cadastrar OK
+    - Fazer login OK
+    - Recuperar senha
+    - Alterar informações da conta OK
+
+Anúncios / Repasse:
+    - Criar anúncio OK
+    - Ver meus anúncios OK
+    - Ver detalhes dos meus anúncios OK
+    - Solicitar alteração dos meus anúncios OK
+    - Encerrar anúncio OK
+    - Pausar anúncio OK
+    - Filtrar anúncios
+    - Ver detalhes de anúncios
+    - Comprar anúncio fechado
+    - Comprar anúncios por plano e quantidade OK
+    - Fazer pagamento de anúncio
+
+- Consultar FAQ / Ajuda OK
+- Enviar e-mail de contato
+- Consultar minhas compras OK
+- Consultar política de privacidade OK
+
+
+Detalhamento:
+
+- Criar anúncio
+    1) Verificar se o usuario logado é PF ou PJ
+        1.1) Caso seja PF
+            1.1.1) Preenche as informações do veículo
+            1.1.2) Caso o cliente não tenha preechido suas informações pessoais, preencher
+            1.1.3) Selecionar plano
+            1.1.4) Fazer pagamento
+        1.2) Caso seja PJ
+            1.2.1) Caso o cliente não tenha anúncios disponíveis, segue o fluxo de compra de planos
+            1.2.2) Preenche as informações do veículo
+            1.2.3) Caso o cliente não tenha preechido suas informações pessoais, preencher
+    2) Caso haja sucesso no pagamento, cria um anuncio a partir do rascunho
+
+- Solicitar alteração dos meus anúncios
+    1) Sistema cria um rascunho do anuncio a ser alterado
+    2) Cliente faz as alterações que deseja nas informações do anúncio original
+    3) Sistema salva informações e envia para moderação
+    4) Admin faz a moderação
+        4.1) Aprova
+            4.1.1) As informações do anúncio rascunho aprovado são copiadas para o anúncio original e o rascunho é apagado
+        4.2) Reprova
+            4.2.1) Admin insere observação informando o motivo da reprovação
+            4.2.2) Cliente volta para o passo 2
+

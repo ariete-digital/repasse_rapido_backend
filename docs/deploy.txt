@@ -1,0 +1,25 @@
+Primeira implantação:
+
+1) Configurar o site pelo forge
+
+2) Alterar variavel de ambiente
+QUEUE_CONNECTION=database
+
+3) Supervisord instalado na VPS da Digital Ocean, criar o arquivo:
+
+/etc/supervisor/conf.d/laravel-worker.conf
+
+[program:laravel-worker]
+process_name=%(program_name)s_%(process_num)02d
+command=php /home/forge/api.queroauto.com.br/artisan queue:work --sleep=3 --tries=3 --timeout=3600
+autostart=true
+autorestart=true
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/home/forge/api.queroauto.com.br/storage/logs/worker.log
+
+4) Ativar o supervisor
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start laravel-worker:*
+

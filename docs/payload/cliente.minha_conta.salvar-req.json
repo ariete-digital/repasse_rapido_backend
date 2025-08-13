@@ -1,0 +1,18 @@
+{
+    "method": "post",
+    "obrigatorios": [],
+    "payload": {
+        "telefone": "(61) 3333-3333",
+        "celular": "(61) 99999-9999",
+        "senhaAtual": "1234",
+        "senha": "123",
+        "num_documento": "98765432101",
+        "data_nasc": "22/07/1992",
+        "cep": "30530-130",
+        "logradouro": "Rua Tabatinga",
+        "numero": "35",
+        "complemento": "ap301",
+        "bairro": "João Pinheiro",
+        "id_cidade": 1
+    }
+}

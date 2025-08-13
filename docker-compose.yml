@@ -1,0 +1,48 @@
+version: '3.2'
+
+services:
+  nginx:
+    container_name: nginx_repasse_rapido
+    image: nginx:latest
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-dev
+
+  app:
+    container_name: app_repasse_rapido
+    image: app
+    build: .
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    networks:
+      - app-dev
+    depends_on:
+      - database
+
+  database:
+    container_name: database_repasse_rapido
+    image: mysql:8.0.25
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    ports:
+      - 3306:3306
+    networks:
+      - app-dev
+
+volumes:
+  dbdata:
+    driver: local
+
+networks:
+  app-dev:
+    driver: bridge
