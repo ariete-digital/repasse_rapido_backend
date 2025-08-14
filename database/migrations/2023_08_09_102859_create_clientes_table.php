@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_cidade')->nullable();
             $table->string('num_documento')->nullable();
-            $table->string('tipo', 2)->nullable(); //PF ou PJ
+            $table->string('tipo', 2)->nullable(); //PF, PJ ou A
             $table->date('data_nasc')->nullable();
             $table->string('telefone')->nullable();
             $table->string('celular')->nullable();

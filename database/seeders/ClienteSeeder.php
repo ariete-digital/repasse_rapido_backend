@@ -2,9 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Helpers\ClienteHelper;
 use App\Models\Cliente;
+use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteSeeder extends Seeder
 {
@@ -13,13 +16,26 @@ class ClienteSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Factory::create();
-        for ($i = 0; $i < 10; $i++) {
-            Cliente::firstOrCreate(
+        $faker = Factory::create('pt_BR');
+        for ($i = 0; $i < 10; $i++) {       
+            $user = User::firstOrCreate(
                 [
-                    'id_usuario' => 1,
+                    'nome' => $faker->name,
+                    'email' => $faker->email,
+                    'password' => Hash::make('123'),
+                    'role' => 'cliente',
+                    'active' => true
+                ]
+            );
+            $tipoCliente = 'PF';
+            if($i >= 3) $tipoCliente = 'A';
+            if($i >= 6) $tipoCliente = 'PJ';
+            
+            $cliente = Cliente::firstOrCreate(
+                [
+                    'id_usuario' => $user->id,
                     'num_documento' => $faker->randomNumber(9),
-                    'tipo' => 'PJ',
+                    'tipo' => $tipoCliente,
                     'data_nasc' => $faker->date(),
                     'telefone' => $faker->phoneNumber,
                     'celular' => $faker->phoneNumber,
@@ -28,12 +44,18 @@ class ClienteSeeder extends Seeder
                     'numero' => $faker->buildingNumber,
                     'bairro' => $faker->city,
                     'complemento' => $faker->secondaryAddress,
-                    'id_cidade' => 1,
+                    'id_cidade' => 2310,
                     'imagem_cnh' => "",
                     'imagem_comprovante' => "",
+                    'imagem_doc_complementar' => "",
                     'nome_fantasia' => $faker->company,
                     'cpf_responsavel' => $faker->randomNumber(9),
                     'nome_responsavel' => $faker->name,
+                    'inscricao_estadual' => $faker->randomNumber(6),
+                    'rg' => $faker->randomNumber(8),
+                    'slug' => ClienteHelper::generateUniqueSlug($user->nome, 'clientes', 'slug'),
+                    'imagem_logo' => "",
+                    'imagem_capa' => "",
                 ]
             );
         }

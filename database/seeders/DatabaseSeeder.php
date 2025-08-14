@@ -13,19 +13,19 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            AAACadastrosBasicosSeeder::class,
+            // AAACadastrosBasicosSeeder::class,
             MunicipiosSeeder::class,
-            // ModelosSeeder::class,
-            AnunciosSeeder::class,
+            ModelosSeeder::class,
+            // AnunciosSeeder::class,
             FormasPagamentosSeeder::class,
             StatusPagamentosSeeder::class,
             UsersSeeder::class,
-            BannerSeeder::class,
+            // BannerSeeder::class,
             OpcionaisSeeder::class,
-            PlanosSeeder::class,
+            // PlanosSeeder::class,
             CadastrosBasicosSeeder::class,
             ClienteSeeder::class,
-            LojasSeeder::class,
+            // LojasSeeder::class,
         ]);
     }
 }
